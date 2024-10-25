@@ -20,9 +20,9 @@ import altair as alt
 import sys
 from torchvision.models import resnet50, ResNet50_Weights
 sys.path.append(os.path.join(os.path.dirname(__file__), 'pages'))
-from chatbot import display_chatbot_ui
-from emergency import display_emergency_ui
-from personalized_diet_planner import display_diet_planner_ui
+from pages.chatbot import display_chatbot_ui
+from pages.emergency import display_emergency_ui
+from pages.personalized_diet_planner import display_diet_planner_ui
 # Using weights=ResNet50_Weights.DEFAULT to load pretrained weights
 model = resnet50(weights=ResNet50_Weights.DEFAULT)
 # API Key and URL for Falcon 180B Model
