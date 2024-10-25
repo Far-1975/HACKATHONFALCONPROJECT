@@ -16,7 +16,7 @@ products = {
     ]
 }
 
-# Function to display product
+# Function to display products
 def display_products(products):
     for category, items in products.items():
         st.header(category)
@@ -35,10 +35,10 @@ def display_products(products):
 # Function to show cart
 def show_cart():
     st.subheader("Your Cart")
+    total_cost = 0  # Initialize total_cost
     if not st.session_state.cart:
         st.write("Your cart is empty.")
     else:
-        total_cost = 0
         for item in st.session_state.cart:
             st.write(f"{item['name']} - ₹{item['cost']}")
             total_cost += item['cost']
