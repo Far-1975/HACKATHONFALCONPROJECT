@@ -61,9 +61,6 @@ diet_recommendations = {
         "Incorporate anti-inflammatory foods like berries and leafy greens"
     ]
 }
-def display_diet_planner_ui():
-    st.subheader("🍎 Diet Planner Based on Your Health")
-
 def generate_diet_plan(symptoms):
     diet_plan = {}
     for symptom in symptoms:
