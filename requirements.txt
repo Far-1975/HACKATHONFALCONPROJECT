@@ -8,3 +8,5 @@ torch
 torchvision
 numpy
 altair
+geopy
+fpdf
