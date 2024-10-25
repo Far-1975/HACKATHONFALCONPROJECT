@@ -18,10 +18,9 @@ import numpy as np
 from datetime import datetime
 import altair as alt
 from torchvision.models import resnet50, ResNet50_Weights
-
+from pages import chatbot, emergency, personalized_diet_planner 
 # Using weights=ResNet50_Weights.DEFAULT to load pretrained weights
 model = resnet50(weights=ResNet50_Weights.DEFAULT)
-
 # API Key and URL for Falcon 180B Model
 API_KEY = "ai71-api-573ef5e3-71e1-471d-b8ed-68d6a69c492f"
 API_URL = "https://api.ai71.ai/v1/chat/completions"
@@ -169,7 +168,26 @@ def visualize_symptom_distribution(symptom_history):
 
 # Streamlit app layout
 st.set_page_config(page_title="Advanced Doctor's Assistant Dashboard", layout="wide")
+st.title("Welcome to Health and Wellness App")
+page = st.sidebar.selectbox(
+    "Choose a section:",
+    ["Home", "Chatbot Assistance", "Emergency Services", "Diet Planner"]
+)
+if page == "Home":
+    st.header("🌟 Welcome to Health and Wellness Hub")
+    st.write("Navigate through the sidebar to explore different sections.")
 
+elif page == "Chatbot Assistance":
+    st.header("🤖 Chatbot Assistance")
+    chatbot.display_chatbot_ui()  # This calls the chatbot UI function from `chatbot.py`
+
+elif page == "Emergency Services":
+    st.header("🚑 Emergency Services")
+    emergency.display_emergency_ui()  # This calls the emergency UI function from `emergency.py`
+
+elif page == "Diet Planner":
+    st.header("🍎 Personalized Diet Planner")
+    personalized_diet_planner.display_diet_planner_ui()  # This calls the diet planner UI function
 # Initialize session state variables
 if 'messages' not in st.session_state:
     st.session_state.messages = []
