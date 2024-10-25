@@ -35,10 +35,6 @@ def find_nearest_hospital(user_location, hospitals):
     distances = [geodesic(user_location, (hospital['Location']['lat'], hospital['Location']['lon'])).km for hospital in hospitals]
     nearest_hospital = hospitals[distances.index(min(distances))]
     return nearest_hospital
-def display_emergency_ui():
-    st.subheader("🚑 Quick Ambulance Booking")
-    st.write("Enter your details to book an ambulance.")
-    # Emergency booking form logic here
 # Streamlit UI
 st.title("🚑 Health Emergency - Quick Ambulance Booking")
 st.subheader("Book your ambulance here with ease, we’ll be there in no time to assist you!")
