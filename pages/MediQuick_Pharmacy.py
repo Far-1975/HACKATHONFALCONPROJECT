@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import qrcode
 from PIL import Image
 import io
@@ -47,6 +46,7 @@ def show_cart():
     st.subheader("Your Cart")
     if not st.session_state.cart:
         st.write("Your cart is empty.")
+        return 0  # Return 0 when the cart is empty
     else:
         total_cost = 0
         for item in st.session_state.cart:
