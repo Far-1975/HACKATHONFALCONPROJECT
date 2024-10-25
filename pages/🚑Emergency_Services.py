@@ -4,9 +4,10 @@ from geopy.geocoders import Nominatim
 from geopy.distance import geodesic
 import time
 
+
 # Function to get latitude and longitude from pincode
 def get_coordinates_from_pincode(pincode):
-    geolocator = Nominatim(user_agent="geoapiExercises")
+    geolocator = Nominatim(user_agent="AI_MEDIQUEST")
     location = geolocator.geocode(pincode)
     if location:
         return (location.latitude, location.longitude)
