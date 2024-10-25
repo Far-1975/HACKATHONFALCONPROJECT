@@ -92,3 +92,9 @@ pairs = [
 def get_response(user_input):
     chatbot = Chat(pairs, reflections)
     return chatbot.respond(user_input)
+def display_chatbot_ui():
+    st.subheader("Ask the Chatbot")
+    # Add chatbot-related fields and response sections here
+    user_input = st.text_input("Type your question:")
+    if user_input:
+        st.write("Chatbot response here...")  # Replace with actual chatbot functionality
