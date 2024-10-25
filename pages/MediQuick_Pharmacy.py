@@ -3,25 +3,26 @@ import qrcode
 from PIL import Image
 import io
 
-# Sample data for medicines and eco-friendly products without image paths
+# Predefined image paths for products (using generated images)
+product_images = {
+    'Paracetamol': '/mnt/data/A_close-up_of_a_blister_pack_of_Paracetamol_pills,.png', 
+    'Ibuprofen': '/mnt/data/A_close-up_of_a_blister_pack_of_Ibuprofen_pills,_w.png',     
+    'Bamboo Toothbrush': '/mnt/data/A_bamboo_toothbrush_with_eco-friendly_packaging._T.png',  
+    'Reusable Straw': None  # Image not available yet
+}
+
+# Sample data for medicines and eco-friendly products with image paths
 products = {
     'Medicines': [
-        {'name': 'Paracetamol', 'cost': 20, 'image': None},  # Image to be uploaded
-        {'name': 'Ibuprofen', 'cost': 30, 'image': None},    # Image to be uploaded
+        {'name': 'Paracetamol', 'cost': 20, 'image': product_images['Paracetamol']},
+        {'name': 'Ibuprofen', 'cost': 30, 'image': product_images['Ibuprofen']},
     ],
     'Eco-Friendly Products': [
-        {'name': 'Bamboo Toothbrush', 'cost': 10, 'image': None},  # Image to be uploaded
-        {'name': 'Reusable Straw', 'cost': 5, 'image': None},      # Image to be uploaded
+        {'name': 'Bamboo Toothbrush', 'cost': 10, 'image': product_images['Bamboo Toothbrush']},
+        {'name': 'Reusable Straw', 'cost': 5, 'image': product_images['Reusable Straw']},  # Add the path when available
     ]
 }
 
-# Function to set images for products through upload
-def set_product_images(products):
-    st.subheader("Upload Images for Products")
-    for category, items in products.items():
-        for item in items:
-            item['image'] = st.file_uploader(f"Upload image for {item['name']}", type=["png", "jpg", "jpeg"], key=item['name'])
-            
 # Function to display products
 def display_products(products):
     for category, items in products.items():
@@ -30,9 +31,10 @@ def display_products(products):
             col1, col2, col3 = st.columns([2, 1, 1])
             with col1:
                 if item['image'] is not None:
-                    st.image(item['image'], width=150)
+                    image = Image.open(item['image'])  # Load predefined image
+                    st.image(image, width=150)
                 else:
-                    st.write("No image uploaded.")
+                    st.write("No image available.")
             with col2:
                 st.write(item['name'])
                 st.write(f"Price: ₹{item['cost']}")
@@ -69,10 +71,7 @@ if 'cart' not in st.session_state:
 
 st.title("Medicines and Eco-Friendly Products Platform")
 
-# Prompt user to set images for each product
-set_product_images(products)
-
-# Display products with uploaded images
+# Display products with predefined images
 display_products(products)
 
 # Show cart and calculate the total cost
