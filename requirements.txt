@@ -11,3 +11,5 @@ altair
 geopy
 fpdf
 nltk
+qrcode
+
