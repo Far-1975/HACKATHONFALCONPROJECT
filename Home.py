@@ -19,10 +19,6 @@ from datetime import datetime
 import altair as alt
 import sys
 from torchvision.models import resnet50, ResNet50_Weights
-sys.path.append(os.path.join(os.path.dirname(__file__), 'pages'))
-from pages.chatbot import display_chatbot_ui
-from pages.emergency import display_emergency_ui
-from pages.personalized_diet_planner import display_diet_planner_ui
 # Using weights=ResNet50_Weights.DEFAULT to load pretrained weights
 model = resnet50(weights=ResNet50_Weights.DEFAULT)
 # API Key and URL for Falcon 180B Model
@@ -172,27 +168,6 @@ def visualize_symptom_distribution(symptom_history):
 
 # Streamlit app layout
 st.set_page_config(page_title="Advanced Doctor's Assistant Dashboard", layout="wide")
-st.title("Welcome to Health and Wellness App")
-page = st.sidebar.selectbox(
-    "Choose a section:",
-    ["Home", "Chatbot Assistance", "Emergency Services", "Diet Planner"]
-)
-if page == "Home":
-    st.header("🌟 Welcome to Health and Wellness Hub")
-    st.write("Navigate through the sidebar to explore different sections.")
-
-elif page == "Chatbot Assistance":
-    st.header("🤖 Chatbot Assistance")
-    chatbot.display_chatbot_ui()  # This calls the chatbot UI function from `chatbot.py`
-
-elif page == "Emergency Services":
-    st.header("🚑 Emergency Services")
-    emergency.display_emergency_ui()  # This calls the emergency UI function from `emergency.py`
-
-elif page == "Diet Planner":
-    st.header("🍎 Personalized Diet Planner")
-    personalized_diet_planner.display_diet_planner_ui()  # This calls the diet planner UI function
-# Initialize session state variables
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 if 'symptom_text' not in st.session_state:
@@ -338,10 +313,6 @@ with tab2:
         st.write(result["severity"])
         st.write("Analysis Results:")
         st.write(result["results"])
-
-
-
-
     #st.sidebar.markdown("<a href='chatbot' target='_self'>subpage</a>", unsafe_allow_html=True)
     #st.page_link("chatbot.py", label="chat_bot", icon="1️⃣")
     #st.markdown("<a href='subpage' target='_self'>subpage</a>", unsafe_allow_html=True)
