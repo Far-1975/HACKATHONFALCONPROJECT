@@ -324,13 +324,10 @@ with tab2:
 
     - 📋 Symptom Tracker: Describe your symptoms for a quick AI-powered analysis from Falcon 180B. Start your journey to better health!
 
-    - 📄 PDF Report: Create a PDF report of your symptoms and AI analysis—download and keep track of your health!
-
-    - 🖼 Upload Medical Image: Upload an X-ray or similar image for AI insights on lung health, pneumonia, or COVID-19.
-
-    - 📈 Symptom Trends: View progress with simple graphs showing your symptom and pain levels over time.
-
-    - 🍰 Symptom Distribution: See your symptoms in a colorful pie chart to understand your health patterns.
+  - 📄 PDF Report: Create a PDF report of your symptoms and AI analysis—download and keep track of your health!
+  - 🖼 Upload Medical Image: Upload an X-ray or similar image for AI insights on lung health, pneumonia, or COVID-19.
+  - 📈 Symptom Trends: View progress with simple graphs showing your symptom and pain levels over time.
+  - 🍰 Symptom Distribution: See your symptoms in a colorful pie chart to understand your health patterns.
 
 ⚠ Note: AI insights are for reference only. Always consult a healthcare provide
     """
