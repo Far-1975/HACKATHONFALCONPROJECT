@@ -7,7 +7,7 @@ import io
 # Sample data for medicines and eco-friendly products
 products = {
     'Medicines': [
-        {'name': 'Paracetamol', 'cost': 20, 'image': 'https://your-image-hosting.com/image1.png'},
+        {'name': 'Paracetamol', 'cost': 20, 'image': 'https://www.pharmacyonline.co.uk/uploads/images/products/verylarge/pharmacy-online-paracetamol-soluble-paracetamol-500mg-100-effervescent-soluble-tablets-1603455187paracetamol-soluble-500mg-effervescent.jpg'},
         {'name': 'Ibuprofen', 'cost': 30, 'image': 'https://your-image-hosting.com/image2.png'},
     ],
     'Eco-Friendly Products': [
