@@ -8,10 +8,17 @@ products = {
     'Medicines': [
         {'name': 'Paracetamol', 'cost': 20, 'image': 'https://www.pharmacyonline.co.uk/uploads/images/products/verylarge/pharmacy-online-paracetamol-soluble-paracetamol-500mg-100-effervescent-soluble-tablets-1603455187paracetamol-soluble-500mg-effervescent.jpg'},
         {'name': 'Ibuprofen', 'cost': 30, 'image': 'https://th.bing.com/th/id/OIP.HktCBpPfL6BOdsHlb0kVdgHaEi?w=296&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
+        {'name': 'Cough Syrup', 'cost': 50, 'image': 'https://th.bing.com/th/id/OIP.FxakDZU1cFXkh6sbcR-KAQHaEK?w=306&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
+        {'name': 'Divon Plus', 'cost': 40, 'image': 'https://th.bing.com/th/id/OIP.OIXJuBgmXUQNEZeoIRLzzgHaFj?w=261&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
+        {'name': 'Dart', 'cost': 35, 'image': 'https://th.bing.com/th/id/OIP.7KWWzM6_JFRtHqjPBGw68AHaE8?w=285&h=190&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
+    ],
     ],
     'Eco-Friendly Products': [
         {'name': 'Bamboo Toothbrush', 'cost': 10, 'image': 'https://th.bing.com/th/id/OIP.59d9Rh228jTYrcPiGxakIQHaF7?w=244&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
         {'name': 'Reusable Straw', 'cost': 5, 'image': 'https://th.bing.com/th/id/OIP.G3oC21ZA2GW-qNXAyNqWKgHaHa?rs=1&pid=ImgDetMain'},
+        {'name': 'Jute Bag', 'cost': 15, 'image': 'https://th.bing.com/th/id/OIP.NF-XfRVu2JfGn3rURumFwQHaFj?w=233&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
+        {'name': 'Recycled Notebook', 'cost': 8, 'image': 'https://th.bing.com/th/id/OIP.WgNuRQ_GZVs09czSBe3dMQHaFj?w=225&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
+        {'name': 'Compostable Cutlery Set', 'cost': 12, 'image': 'https://th.bing.com/th/id/OIP.O4VqYbtJIVNnbJzp2fZg7gHaHa?w=215&h=215&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
     ]
 }
 
