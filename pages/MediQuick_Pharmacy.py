@@ -12,7 +12,6 @@ products = {
         {'name': 'Divon Plus', 'cost': 40, 'image': 'https://th.bing.com/th/id/OIP.OIXJuBgmXUQNEZeoIRLzzgHaFj?w=261&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
         {'name': 'Dart', 'cost': 35, 'image': 'https://th.bing.com/th/id/OIP.7KWWzM6_JFRtHqjPBGw68AHaE8?w=285&h=190&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
     ],
-    ],
     'Eco-Friendly Products': [
         {'name': 'Bamboo Toothbrush', 'cost': 10, 'image': 'https://th.bing.com/th/id/OIP.59d9Rh228jTYrcPiGxakIQHaF7?w=244&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
         {'name': 'Reusable Straw', 'cost': 5, 'image': 'https://th.bing.com/th/id/OIP.G3oC21ZA2GW-qNXAyNqWKgHaHa?rs=1&pid=ImgDetMain'},
