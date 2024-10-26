@@ -57,7 +57,8 @@ def generate_qr(payment_link):
 if 'cart' not in st.session_state:
     st.session_state.cart = []
 
-st.title("MediGreen")
+st.title("MediQuick_Pharmacy")
+st.title("
 
 # Display products
 display_products(products)
