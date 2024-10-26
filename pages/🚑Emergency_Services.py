@@ -36,7 +36,7 @@ def find_nearest_hospital(user_location, hospitals):
     nearest_hospital = hospitals[distances.index(min(distances))]
     return nearest_hospital
 # Streamlit UI
-st.title("🚑 Health Emergency - Quick Ambulance Booking")
+st.title("🚑 Health Emergency")
 st.subheader("Book your ambulance here with ease, we’ll be there in no time to assist you!")
 st.write("In case of emergency, please remain calm. We’re here to help and on our way shortly.")
 
