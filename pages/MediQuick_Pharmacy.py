@@ -8,7 +8,7 @@ import io
 products = {
     'Medicines': [
         {'name': 'Paracetamol', 'cost': 20, 'image': 'https://www.pharmacyonline.co.uk/uploads/images/products/verylarge/pharmacy-online-paracetamol-soluble-paracetamol-500mg-100-effervescent-soluble-tablets-1603455187paracetamol-soluble-500mg-effervescent.jpg'},
-        {'name': 'Ibuprofen', 'cost': 30, 'image': 'https://your-image-hosting.com/image2.png'},
+        {'name': 'Ibuprofen', 'cost': 30, 'image': 'https://th.bing.com/th/id/OIP.HktCBpPfL6BOdsHlb0kVdgHaEi?w=296&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7'},
     ],
     'Eco-Friendly Products': [
         {'name': 'Bamboo Toothbrush', 'cost': 10, 'image': 'https://your-image-hosting.com/image3.png'},
