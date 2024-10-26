@@ -321,7 +321,7 @@ with tab2:
 
     st.sidebar.write(
     """
-        ➕ MedQuest
+        🩺 MediQuest
 
   - 📋 Symptom Tracker: Describe your symptoms for a quick AI-powered analysis from Falcon 180B. Start your journey to better health!
   - 📄 PDF Report: Create a PDF report of your symptoms and AI analysis—download and keep track of your health!
