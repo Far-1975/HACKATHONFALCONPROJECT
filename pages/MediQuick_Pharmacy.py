@@ -58,7 +58,7 @@ if 'cart' not in st.session_state:
     st.session_state.cart = []
 
 st.title("MediQuick_Pharmacy")
-st.title("
+st.write("Buy your Medicines and Eco-friendly products")
 
 # Display products
 display_products(products)
