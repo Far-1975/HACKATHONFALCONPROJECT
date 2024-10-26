@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 import qrcode
 from PIL import Image
 import io
@@ -15,6 +14,12 @@ products = {
         {'name': 'Reusable Straw', 'cost': 5, 'image': 'https://th.bing.com/th/id/OIP.G3oC21ZA2GW-qNXAyNqWKgHaHa?rs=1&pid=ImgDetMain'},
     ]
 }
+
+# Initialize session states
+if 'cart' not in st.session_state:
+    st.session_state.cart = []
+if 'order_confirmed' not in st.session_state:
+    st.session_state.order_confirmed = False
 
 # Function to display products
 def display_products(products):
@@ -35,7 +40,7 @@ def display_products(products):
 # Function to show cart
 def show_cart():
     st.subheader("Your Cart")
-    total_cost = 0  # Initialize total_cost
+    total_cost = 0
     if not st.session_state.cart:
         st.write("Your cart is empty.")
     else:
@@ -53,47 +58,45 @@ def generate_qr(payment_link):
     buf.seek(0)
     return Image.open(buf)
 
-# Initialize session state for cart
-if 'cart' not in st.session_state:
-    st.session_state.cart = []
+# Main app title
+st.title("☤💊 MediQuick Pharmacy")
 
-st.title("☤💊MediQuick_Pharmacy")
-
-
-# Display products
+# Display products and add to cart functionality
 display_products(products)
-if "name" not in st.session_state:
-    st.session_state.name = ""
-if "contact_info" not in st.session_state:
-    st.session_state.contact_info = ""
-if "address" not in st.session_state:
-    st.session_state.address = ""
-if "order_confirmed" not in st.session_state:
-    st.session_state.order_confirmed = False
+
 # Show cart and get total cost
 total_cost = show_cart()
+
+# Proceed to Buy and form for user details
 if total_cost > 0 and st.button("Proceed to Buy"):
-    st.subheader("Fill Your Details")
+    st.session_state.proceed_to_buy = True  # Set a flag to show the form
 
-    # Persist user input
-    st.session_state.name = st.text_input("Name", value=st.session_state.name)
-    st.session_state.contact_info = st.text_input("Contact Info", value=st.session_state.contact_info)
-    st.session_state.address = st.text_area("Address", value=st.session_state.address)
-    medical_report = st.file_uploader("Upload Medical Report (if any)", type=["jpg", "jpeg", "png", "pdf"])
+# Show the form for filling user details if Proceed to Buy was clicked
+if st.session_state.get('proceed_to_buy', False):
+    with st.form("order_form"):
+        st.subheader("Fill Your Details")
+        
+        # Input fields with state persistence in form
+        name = st.text_input("Name")
+        contact_info = st.text_input("Contact Info")
+        address = st.text_area("Address")
+        medical_report = st.file_uploader("Upload Medical Report (if any)", type=["jpg", "jpeg", "png", "pdf"])
 
-    # Display "Confirm Order" button only if the order isn't already confirmed
-    if not st.session_state.order_confirmed and st.button("Confirm Order"):
-        # Check if all required details are provided
-        if st.session_state.name and st.session_state.contact_info and st.session_state.address:
-            # Set the order confirmation flag in session state
-            st.session_state.order_confirmed = True
-            # Generate payment link and QR code
-            payment_link = f"http://example.com/pay?amount={total_cost}"
-            qr_image = generate_qr(payment_link)
-            st.image(qr_image)
-            st.success("Order Confirmed! Your QR Code for payment is shown above.")
-        else:
-            st.error("Please complete all fields to confirm the order.")
+        # Confirm Order button inside the form
+        confirm_order = st.form_submit_button("Confirm Order")
+
+        # Check if Confirm Order button is clicked
+        if confirm_order:
+            if name and contact_info and address:
+                # Set the order confirmation flag in session state
+                st.session_state.order_confirmed = True
+                # Generate payment link and QR code
+                payment_link = f"http://example.com/pay?amount={total_cost}"
+                qr_image = generate_qr(payment_link)
+                st.image(qr_image)
+                st.success("Order Confirmed! Your QR Code for payment is shown above.")
+            else:
+                st.error("Please complete all fields to confirm the order.")
 
 # Show the confirmation details if the order was previously confirmed
 if st.session_state.order_confirmed:
