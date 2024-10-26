@@ -186,7 +186,7 @@ if 'pain_history' not in st.session_state:
 # Create tabs for different sections
 st.markdown("""
     <h1 style='text-align: center; font-family: Verdana, sans-serif; color: #2C3E50;'>
-    🩺MedQuest
+    🩺MediQuest
     </h1>
     <p style='text-align: center; font-size: 18px; color: #7F8C8D;'>
     Your Health Companion for Symptom Tracking and Analysis
