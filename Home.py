@@ -321,7 +321,7 @@ with tab2:
 
     st.sidebar.write(
     """
-    🌟 Welcome to  ➕ MedQuest the Dashboard! 🌟
+        ➕ MedQuest
 
     - 📋 Symptom Tracker: 🩺 Describe your symptoms to receive a comprehensive analysis from our cutting-edge **Falcon 180B model. Your journey to better health starts here!
 
