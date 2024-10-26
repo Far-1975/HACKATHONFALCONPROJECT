@@ -66,16 +66,24 @@ display_products(products)
 # Show cart and get total cost
 total_cost = show_cart()
 
-# User details and order confirmation
 if total_cost > 0 and st.button("Proceed to Buy"):
     st.subheader("Fill Your Details")
-    name = st.text_input("Name")
-    contact_info = st.text_input("Contact Info")
-    address = st.text_area("Address")
-    medical_report = st.file_uploader("Upload Medical Report (if any)", type=["jpg", "jpeg", "png", "pdf"])
     
+    # Store user input in session state to prevent data loss on rerun
+    name = st.text_input("Name", key="name_input", value=st.session_state.get("name", ""))
+    contact_info = st.text_input("Contact Info", key="contact_input", value=st.session_state.get("contact_info", ""))
+    address = st.text_area("Address", key="address_input", value=st.session_state.get("address", ""))
+    medical_report = st.file_uploader("Upload Medical Report (if any)", type=["jpg", "jpeg", "png", "pdf"])
+
+    # Store input in session state when filled
+    st.session_state.name = name
+    st.session_state.contact_info = contact_info
+    st.session_state.address = address
+
     if st.button("Confirm Order"):
+        # Check if all required details are provided
         if name and contact_info and address:
+            # Generate payment link and QR code
             payment_link = f"http://example.com/pay?amount={total_cost}"
             qr_image = generate_qr(payment_link)
             st.image(qr_image)
