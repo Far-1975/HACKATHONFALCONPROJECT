@@ -165,9 +165,18 @@ def visualize_symptom_distribution(symptom_history):
         st.plotly_chart(fig)
     else:
         st.write("No symptom data available to visualize.")
-
 # Streamlit app layout
 st.set_page_config(page_title="Advanced Doctor's Assistant Dashboard", layout="wide")
+st.markdown(
+    """
+    <style>
+    .main { background-color: #f0f2f6; }
+    .sidebar .sidebar-content { background-color: #ffffff; }
+    .block-container { padding-top: 20px; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 if 'messages' not in st.session_state:
     st.session_state.messages = []
 if 'symptom_text' not in st.session_state:
