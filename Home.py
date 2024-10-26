@@ -322,8 +322,7 @@ with tab2:
     """
      ➕ MedQuest 
 
-    - 📋 Symptom Tracker: Describe your symptoms for a quick AI-powered analysis from Falcon 180B. Start your journey to better health!
-
+  - 📋 Symptom Tracker: Describe your symptoms for a quick AI-powered analysis from Falcon 180B. Start your journey to better health!
   - 📄 PDF Report: Create a PDF report of your symptoms and AI analysis—download and keep track of your health!
   - 🖼 Upload Medical Image: Upload an X-ray or similar image for AI insights on lung health, pneumonia, or COVID-19.
   - 📈 Symptom Trends: View progress with simple graphs showing your symptom and pain levels over time.
