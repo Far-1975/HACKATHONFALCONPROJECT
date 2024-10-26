@@ -316,11 +316,11 @@ with tab2:
     #st.page_link("chatbot.py", label="chat_bot", icon="1️⃣")
     #st.markdown("<a href='subpage' target='_self'>subpage</a>", unsafe_allow_html=True)
 
-    st.sidebar.header("Instructions")
+    st.sidebar.header("About")
 
     st.sidebar.write(
     """
-    🌟 Welcome to  ➕ MedQuest the Dashboard! 🌟
+     ➕ MedQuest 
 
     - 📋 Symptom Tracker: 🩺 Describe your symptoms to receive a comprehensive analysis from our cutting-edge **Falcon 180B model. Your journey to better health starts here!
 
